@@ -1,0 +1,17 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  include ./templates/header.jade
+  body 
+    h3 #{videodata.categoryName}
+    ul
+       - videodata.categories.forEach(function(item){
+          li 
+            a(href="#{url + item.categoryID}", target='_blank')  #{item.categoryName}       
+
+       - })
+
+
+  
